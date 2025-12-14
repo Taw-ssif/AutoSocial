@@ -14,7 +14,7 @@ api_key = '39c9c7bd700817b626c0df04a553683b'
 
 db = supabase.create_client(supabase_url, supakey)
 #Promptengineering
-with open('FacebookandInstaAutomate\prompteng.txt','r') as f:
+with open('prompteng.txt','r') as f:
     mainprompt= f.read()
 prompt = f"{mainprompt}"
 
@@ -45,7 +45,7 @@ modelimg = sdk.model("stabilityai/stable-diffusion-xl-base-1.0")
 imageMain= modelimg.run(image_prompt)
 print(imageMain.output)
 resp = requests.get(imageMain.output)
-with open(f"FacebookandInstaAutomate/post{next_image_number}Pic.png","wb") as f:
+with open(f"post{next_image_number}Pic.png","wb") as f:
     f.write(resp.content)
 
 #posting to facebook
