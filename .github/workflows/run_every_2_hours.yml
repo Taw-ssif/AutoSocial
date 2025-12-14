@@ -28,4 +28,4 @@ jobs:
 
       # Step 4: Run your script
       - name: Run Python script
-        run: python autoPost.py
+        run: python Autopost.py
