@@ -1,0 +1,31 @@
+name: Run Python Script Every 2 Hours
+
+# Schedule: every 2 hours
+on:
+  schedule:
+    - cron: "0 */2 * * *"  # every 2 hours
+  workflow_dispatch:       # optional: allows manual trigger
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout your repo
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      # Step 4: Run your script
+      - name: Run Python script
+        run: python your_script.py
