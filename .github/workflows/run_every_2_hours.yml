@@ -28,4 +28,4 @@ jobs:
 
       # Step 4: Run your script
       - name: Run Python script
-        run: python your_script.py
+        run: python autosocial.py
