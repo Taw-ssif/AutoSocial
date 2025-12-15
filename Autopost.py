@@ -17,6 +17,8 @@ db = supabase.create_client(supabase_url, supakey)
 with open('prompteng.txt','r') as f:
     mainprompt= f.read()
 prompt = f"{mainprompt}"
+respo = (db.table("My Post Details").select("post_caption", "image_prompt").execute())
+postdata = [(row["post_caption"], row["image_prompt"]) for row in respo.data]
 
 #post Caption
 sdk = Bytez(api_key)
@@ -24,14 +26,14 @@ model = sdk.model("Qwen/Qwen3-4B-Instruct-2507")
 output= model.run([
   {
     "role": "user",
-    "content": f"{prompt}. Main Prompt: One of the topics listed before, deep analysis. Do not add anything extra. Direct copy paste ready response. Dont have to add anything like: 'Here is the post caption:'. Just give me the caption and image prompt. Prompt for caption: Describe a theory or procedure related to Problem Solving in a mathematical way in a way that is easy for clients to understand. Make it large and descriptive enough. But not a huge paragraph. Attention Grabing. Give it a title and then add the rest. **IMPORTANT** Add the prompt in this specific format: 'Prompt:' "
+    "content": f"{prompt}.The previous posts details: {postdata} Main Prompt: One of the topics listed before, deep analysis. Do not add anything extra. Direct copy paste ready response. Dont have to add anything like: 'Here is the post caption:'. Just give me the caption and image prompt. Prompt for caption: Describe a theory or procedure related to Problem Solving in a mathematical way in a way that is easy for clients to understand. Make it large and descriptive enough. But not a huge paragraph. Attention Grabing. Give it a title and then add the rest. **IMPORTANT** Add the prompt in this specific format: 'Prompt:' "
   }
 ])
 while output.output == None:
     output= model.run([
   {
     "role": "user",
-    "content": f"{prompt}. Main Prompt: One of the topics listed before, deep analysis. Do not add anything extra. Direct copy paste ready response. Dont have to add anything like: 'Here is the post caption:'. Just give me the caption and image prompt. Prompt for caption: Describe a theory or procedure related to Problem Solving in a mathematical way in a way that is easy for clients to understand. Make it large and descriptive enough. But not a huge paragraph. Attention Grabing. Give it a title and then add the rest. **IMPORTANT** Add the prompt in this specific format: 'Prompt:' "
+    "content": f"{prompt}.Previous post details: {postdata} Main Prompt: One of the topics listed before, deep analysis. Do not add anything extra. Direct copy paste ready response. Dont have to add anything like: 'Here is the post caption:'. Just give me the caption and image prompt. Prompt for caption: Describe a theory or procedure related to Problem Solving in a mathematical way in a way that is easy for clients to understand. Make it large and descriptive enough. But not a huge paragraph. Attention Grabing. Give it a title and then add the rest. **IMPORTANT** Add the prompt in this specific format: 'Prompt:' "
   }
 ])
 print(output)
