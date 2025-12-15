@@ -27,7 +27,7 @@ output= model.run([
     "content": f"{prompt}. Main Prompt: One of the topics listed before, deep analysis. Do not add anything extra. Direct copy paste ready response. Dont have to add anything like: 'Here is the post caption:'. Just give me the caption and image prompt. Prompt for caption: Describe a theory or procedure related to Problem Solving in a mathematical way in a way that is easy for clients to understand. Make it large and descriptive enough. But not a huge paragraph. Attention Grabing. Give it a title and then add the rest. **IMPORTANT** Add the prompt in this specific format: 'Prompt:' "
   }
 ])
-while output.output =="None":
+while output.output == None:
     output= model.run([
   {
     "role": "user",
