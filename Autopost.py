@@ -26,7 +26,7 @@ model = sdk.model("Qwen/Qwen3-4B-Instruct-2507")
 output= model.run([
   {
     "role": "user",
-    "content": f"{prompt}.The previous posts details: {postdata} Main Prompt: One of the topics listed before, deep analysis. Do not add anything extra. Direct copy paste ready response. Dont have to add anything like: 'Here is the post caption:'. Just give me the caption and image prompt. Prompt for caption: Describe a theory or procedure related to anything i mentioned before way in a way that is easy for clients to understand. Make it large and descriptive enough. But not a huge paragraph. Attention Grabing. Check the previous posts details and create something new. Give it a title and then add the rest. The image prompt, make it have various styles everytime.... not the same thing **IMPORTANT** Add the prompt in this specific format: 'Prompt:' "
+    "content": f"{prompt}.The previous posts details: {postdata} Main Prompt: Its 16th December today. the victory day of Bangladesh. make the post military type and add emotional content. nothing else. One of the topics listed before, deep analysis. Do not add anything extra. Direct copy paste ready response. Dont have to add anything like: 'Here is the post caption:'. Just give me the caption and image prompt. Prompt for caption: Describe a theory or procedure related to anything i mentioned before way in a way that is easy for clients to understand. Make it large and descriptive enough. But not a huge paragraph. Attention Grabing. Check the previous posts details and create something new. Give it a title and then add the rest. The image prompt, make it have various styles everytime.... not the same thing **IMPORTANT** Add the prompt in this specific format: 'Prompt:' "
   }
 ])
 while output.output == None:
