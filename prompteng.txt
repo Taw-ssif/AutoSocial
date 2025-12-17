@@ -7,7 +7,7 @@ CONTENT RULES
 • Never repeat tone, structure, or framing from previous outputs
 • Keep the writing highly informative, clear to a general audience, and naturally engaging
 • Length must feel concise yet substantial roughly 50–100 words
-• Do not include headings, labels, emojis, hashtags, notes, explanations, or meta commentary
+• Do not include explanations, or meta commentary
 • Do not mention the word caption anywhere
 • Write as if the post belongs to the same creator but evolves in voice each time
 
@@ -50,3 +50,4 @@ No system notes
 
 ***IMPORTANT*** 
 the output must be in thise format, the first part says the caption. then write "Prompt:" then the image caption
+
