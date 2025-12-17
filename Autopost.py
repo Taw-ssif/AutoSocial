@@ -19,14 +19,14 @@ with open('prompteng.txt','r') as f:
 prompt = f"{mainprompt}"
 respo = (db.table("My Post Details").select("post_caption", "image_prompt").execute())
 postdata = [(row["post_caption"], row["image_prompt"]) for row in respo.data]
-
+print(postdata)
 #post Caption
 sdk = Bytez(api_key)
 model = sdk.model("Qwen/Qwen3-4B-Instruct-2507")
 output= model.run([
   {
     "role": "user",
-    "content": f"{prompt}.The previous posts details: {postdata} Main Prompt: Its 16th December today. the victory day of Bangladesh. make the post military type and add emotional content. nothing else. Info:16 December stands as the day Bangladesh rose free after the long and painful Liberation War of 1971. Through sacrifice courage and unbreakable unity a nation claimed its right to exist with dignity. Victory Day is not just a memory of triumph but a reminder of responsibility to protect truth justice and independence. As the red and green fly high today we honor the martyrs and carry forward the spirit that shaped a free Bangladesh. image info:Digital illustration poster style Bangladesh Victory Day theme red and green dominant colors waving national flag without human faces abstract map of Bangladesh glowing softly Shaheed Minar silhouette white dove symbols of peace sunlight rays dramatic sky patriotic atmosphere high detail clean composition under 10MB. deep analysis. Do not add anything extra. Direct copy paste ready response. Dont have to add anything like: 'Here is the post caption:'. Just give me the caption and image prompt. Prompt for caption: Describe a theory or procedure related to anything i mentioned before way in a way that is easy for clients to understand. Make it large and descriptive enough. But not a huge paragraph. Attention Grabing. Check the previous posts details and create something new. Give it a title and then add the rest. The image prompt, make it have various styles everytime.... not the same thing **IMPORTANT** Add the prompt in this specific format: 'Prompt:' "
+    "content": f"{prompt}.The previous posts details: {postdata} Main Prompt: something that you havent posted about deep analysis. Do not add anything extra. Direct copy paste ready response. Dont have to add anything like: 'Here is the post caption:'. Just give me the caption and image prompt. Prompt for caption: Describe a theory or procedure related to anything i mentioned before way in a way that is easy for clients to understand. Make it large and descriptive enough. But not a huge paragraph. Attention Grabing. Check the previous posts details and create something new. Give it a title and then add the rest. The image prompt, make it have various styles everytime.... not the same thing **IMPORTANT** Add the prompt in this specific format: 'Prompt:' "
   }
 ])
 while output.output == None: 
