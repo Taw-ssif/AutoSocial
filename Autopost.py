@@ -17,6 +17,7 @@ db = supabase.create_client(supabase_url, supakey)
 with open('prompteng.txt','r') as f:
     mainprompt= f.read()
 prompt = f"{mainprompt}"
+print(prompt)
 respo = (db.table("My Post Details").select("post_caption", "image_prompt").execute())
 postdata = [(row["post_caption"], row["image_prompt"]) for row in respo.data]
 print(postdata)
