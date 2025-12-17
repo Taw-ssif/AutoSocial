@@ -32,7 +32,7 @@ output= model.run([
     "content": f"{prompt}.The previous posts details: {postdata} Main Prompt: {letter} no. prompt from the updated content pool. deep analysis. Do not add anything extra. Direct copy paste ready response. Dont have to add anything like: 'Here is the post caption:'. Just give me the caption and image prompt. Prompt for caption: Describe a theory or procedure related to anything i mentioned before way in a way that is easy for clients to understand. Make it large and descriptive enough. But not a huge paragraph. Attention Grabing. Check the previous posts details and create something new. Give it a title and then add the rest. The image prompt, make it have various styles everytime.... not the same thing **IMPORTANT** Add the prompt in this specific format: 'Prompt:' "
   }
 ])
-while output.output == None: 
+while output == "None": 
     output= model.run([
   {
     "role": "user",
