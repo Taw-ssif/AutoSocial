@@ -22,7 +22,7 @@ respo = (db.table("My Post Details").select("post_caption", "image_prompt").exec
 postdata = [(row["post_caption"], row["image_prompt"]) for row in respo.data]
 print(postdata)
 #post Caption
-letter = random.choices("a","b", "c", "d", "e", "f", "g")
+letter = random.choices("abcdefg")
 
 sdk = Bytez(api_key)
 model = sdk.model("Qwen/Qwen3-4B-Instruct-2507")
