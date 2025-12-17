@@ -33,7 +33,7 @@ output= model.run([
   }
 ])
 print(output)
-while output == None: 
+while output.output == None: 
     output= model.run([
   {
     "role": "user",
