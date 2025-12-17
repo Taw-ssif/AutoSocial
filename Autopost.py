@@ -25,7 +25,7 @@ print(postdata)
 letter = random.choices("abcdefg")
 
 sdk = Bytez(api_key)
-model = sdk.model("paust/pko-t5-small")
+sdk.model("Qwen/Qwen3-4B-Instruct-2507")
 output= model.run([
   {
     "role": "user",
