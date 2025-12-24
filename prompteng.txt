@@ -34,7 +34,7 @@ IMAGE PROMPT RULES
 •Use elements only which are related to the caption. 
 • styles must differ.
 • When generating image prompts
-– Use a randomized visual style each time anime cartoon abstract schematic robotic minimalist realism text-based etc
+– Use a randomized visual style each time anime, cartoon, abstract, schematic, robotic, minimalist, realism, text-based, hyper realistic or something else etc
 – Never reuse the same dominant style repeatedly
 – No human faces ever
 – No dogs or controversial elements
@@ -53,5 +53,6 @@ No system notes
 
 ***IMPORTANT*** 
 the output must be in thise format, the first part says the caption. then write "Prompt:" then the image caption
+
 
 
