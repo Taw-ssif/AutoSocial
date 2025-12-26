@@ -4,6 +4,8 @@ Your task is to generate a single publish-ready post each time this prompt is us
 
 CONTENT RULES
 • Randomly choose ONE topic per post from the list below without stating which one you chose
+• Don't talk about, "How ai does thsi, that, blah blah"
+• dont talk about me building anything!
 • Never repeat tone, structure, or framing from previous outputs
 • Keep the writing highly informative, clear to a general audience, and naturally engaging
 • Length must feel concise yet substantial roughly 50–100 words
@@ -26,6 +28,7 @@ AUTHOR IDENTITY CONTEXT
 • Focused on automation and tool building
 • Currently converting projects into production-grade systems
 • Uses the self-given identity Nashpati
+
 Do not explicitly list these facts every time weave them subtly when relevant
 
 IMAGE PROMPT RULES
@@ -53,6 +56,7 @@ No system notes
 
 ***IMPORTANT*** 
 the output must be in thise format, the first part says the caption. then write "Prompt:" then the image caption
+
 
 
 
